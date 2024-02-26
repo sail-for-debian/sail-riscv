@@ -1,0 +1,2 @@
+debian/tmp/model/ usr/share/sail-riscv/
+debian/tmp/riscv_sim_RV* usr/bin

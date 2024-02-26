@@ -1,0 +1,20 @@
+--- a/Makefile
++++ b/Makefile
+@@ -123,12 +123,15 @@
+ # Attempt to work with either sail from opam or built from repo in SAIL_DIR
+ ifneq ($(SAIL_DIR),)
+ # Use sail repo in SAIL_DIR
+-SAIL:=$(SAIL_DIR)/sail
++#SAIL:=$(SAIL_DIR)/sail
++SAIL:=/usr/bin/sail
+ export SAIL_DIR
+ EXPLICIT_COQ_SAIL=yes
+ else
+ # Use sail from opam package
+-SAIL_DIR:=$(shell opam config var sail:share)
++#SAIL_DIR:=$(shell opam config var sail:share)
++#SAIL:=sail
++SAIL_DIR="/usr/lib/ocaml/sail"
+ SAIL:=sail
+ endif
+ SAIL_LIB_DIR:=$(SAIL_DIR)/lib

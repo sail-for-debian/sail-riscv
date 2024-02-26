@@ -1,0 +1,3 @@
+#!/bin/bash
+
+install -d -m 755 /usr/share/libsail/plugins

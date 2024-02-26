@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+# You must remove unused comment lines for the released package.
+#export DH_VERBOSE = 1
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+include /usr/share/ocaml/ocamlvars.mk
+
+export SAIL_DIR=/usr/lib/ocaml/sail/
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	ARCH=64 make c_emulator/riscv_sim_RV64
+	ARCH=32 make c_emulator/riscv_sim_RV32
+	#make  "LEM_DIR=/usr/lib/ocaml" "SAIL_DIR=/usr/lib/ocaml"
+
+execute_before_dh_auto_install:
+	mkdir -p $(CURDIR)/debian/tmp
+	cp $(CURDIR)/c_emulator/riscv_sim_RV* $(CURDIR)/debian/tmp
+	cp -r $(CURDIR)/model $(CURDIR)/debian/tmp
+
+override_dh_auto_test:
+	$(CURDIR)/c_emulator/riscv_sim_RV32 -p $(CURDIR)/test/riscv-tests/rv32*.elf
+	$(CURDIR)/c_emulator/riscv_sim_RV64 -p $(CURDIR)/test/riscv-tests/rv64*.elf

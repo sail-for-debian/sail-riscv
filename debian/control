@@ -1,0 +1,39 @@
+Source: sail-riscv
+Priority: optional
+Maintainer: Bo YU <tsu.yubo@gmail.com>
+Build-Depends: 
+ debhelper-compat (= 13),
+ ocaml-dune,
+ libdune-ocaml-dev,
+ ocaml,
+ dh-ocaml,
+ ocaml-findlib,
+ ocamlbuild,
+ libsail-ocaml-dev,
+ liblem,
+ liblem-dev,
+ liblinksem-ocaml-dev,
+ libgmp3-dev,
+ zlib1g-dev,
+ sail-ocaml,
+ z3,
+ libzarith-ocaml-dev,
+ libnum-ocaml-dev,
+ pkg-config,
+Standards-Version: 4.6.2
+Homepage: https://github.com/riscv/sail-riscv
+Rules-Requires-Root: no
+#Vcs-Git: https://salsa.debian.org/debian/sail-riscv.git
+#Vcs-Browser: https://salsa.debian.org/debian/sail-riscv
+
+Package: sail-riscv
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Sail RISC-V model
+ This package contains a formal specification of the RISC-V
+ architecture, written in Sail (repo). It has been adopted
+ by the RISC-V Foundation.
+ .
+ The model specifies assembly language formats of the instructions,
+ the corresponding encoders and decoders, and the instruction
+ semantics.

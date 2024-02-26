@@ -1,0 +1,9 @@
+debian/libsail-plugins/share/libsail/plugins/sail_plugin_lem.cmxs
+debian/libsail-plugins/share/libsail/plugins/sail_plugin_sv.cmxs
+debian/libsail-plugins/share/libsail/plugins/sail_plugin_ocaml.cmxs
+debian/libsail-plugins/share/libsail/plugins/sail_plugin_latex.cmxs
+debian/libsail-plugins/share/libsail/plugins/sail_plugin_c.cmxs
+debian/libsail-plugins/share/libsail/plugins/sail_plugin_output.cmxs
+debian/libsail-plugins/share/libsail/plugins/sail_plugin_coq.cmxs
+debian/libsail-plugins/share/libsail/plugins/sail_plugin_doc.cmxs
+debian/libsail-plugins/share/libsail/plugins/sail_plugin_smt.cmxs

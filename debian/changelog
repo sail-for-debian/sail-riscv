@@ -1,0 +1,5 @@
+sail-riscv (0.5+git20240226.9602e3a-1) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+
+ -- Bo YU <tsu.yubo@gmail.com>  Mon, 26 Feb 2024 10:58:08 +0800
